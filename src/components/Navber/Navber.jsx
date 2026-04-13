@@ -4,6 +4,7 @@ import { IoHome } from "react-icons/io5";
 import { IoMdTime } from "react-icons/io";
 import { FaChartLine } from "react-icons/fa6";
 
+
 export const Navber = () => {
   return (
     <>
@@ -17,6 +18,7 @@ export const Navber = () => {
             </div>
         </div>
     </div>
+    
     </>
   )
 }
