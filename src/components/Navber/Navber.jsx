@@ -7,18 +7,29 @@ import { FaChartLine } from "react-icons/fa6";
 
 export const Navber = () => {
   return (
-    <>
-    <div className='border-b border-gray-300 shadow py-3'>
-        <div className='flex justify-between container mx-auto' >
-            <img src={navimg}></img>
-            <div className='flex gap-4'>
-                <button className=' flex text-white items-center gap-1 bg-[#244D3F] p-2.5'><IoHome />Home</button>
-                <button className=' flex text-white items-center gap-1 bg-[#244D3F] p-2.5' ><IoMdTime />Timeline</button>
-                <button className=' flex text-white items-center gap-1 bg-[#244D3F] p-2.5'><FaChartLine />Stats</button>
-            </div>
-        </div>
-    </div>
+ <>
+ <div className='border-b border-gray-300 shadow py-3'>
+  <div className='flex flex-col sm:flex-row justify-between items-center container mx-auto px-4 gap-3 sm:gap-0'>
     
+    <img src={navimg} className='w-auto h-10 sm:h-auto' />
+
+    <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center sm:justify-end'>
+      
+      <button className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
+        <IoHome /> Home
+      </button>
+
+      <button className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
+        <IoMdTime /> Timeline
+      </button>
+
+      <button className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
+        <FaChartLine /> Stats
+      </button>
+
+    </div>
+  </div>
+</div>
     </>
   )
 }
