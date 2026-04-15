@@ -51,7 +51,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
       </div>
     </section>
 
-    <section className='w-full max-w-[700px]'>
+    <section className='w-full max-w-[900px]'>
       <div className='grid grid-cols-3 gap-3 sm:gap-5 text-center'>
         <div className='shadow-2xl p-5 sm:p-10 bg-white'>
           <h1 className='font-semibold text-[#244D3F] text-[22px] sm:text-[30px]'>{singleProfile.days_since_contact}</h1>
@@ -61,7 +61,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
           <h1 className='font-semibold text-[#244D3F] text-[22px] sm:text-[30px]'>{singleProfile.goal}</h1>
           <p className='text-[#64748B] text-[14px] sm:text-[18px]'>Goal (Days)</p>
         </div>
-        <div className='shadow-2xl p-5 sm:p-10 bg-white'>
+        <div className='shadow-2xl  sm:p-10 bg-white'>
           <h1 className='font-semibold text-[#244D3F] text-[22px] sm:text-[30px]'>{formattedDate}</h1>
           <p className='text-[#64748B] text-[14px] sm:text-[18px]'>Next Due</p>
         </div>
@@ -70,7 +70,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
       <div className='shadow-2xl p-6 sm:p-10 bg-white mt-2.5 space-y-2'>
         <div className='flex justify-between items-center'>
           <h1 className='font-semibold text-[22px] sm:text-[30px] text-[#244D3F]'>Relationship Goal</h1>
-          <button className='text-[#64748B] text-[16px] sm:text-[18px] px-3 py-2 border border-[#64748B] shadow-lg'>Edit</button>
+          <button className='text-[#64748B] text-[16px] sm:text-[18px] px-3 py-2 border border-[#64748B] '>Edit</button>
         </div>
         <h2 className='text-[#64748B] text-[18px]'>Connect every <spen className='font-semibold text-[18px] text-black'>{singleProfile.goal} days</spen></h2>
       </div>
