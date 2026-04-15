@@ -1,11 +1,12 @@
-import React, { use } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { use, useState } from 'react'
+import { data, useParams } from 'react-router-dom';
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FaArchive } from "react-icons/fa";
 import { RiNotificationSnoozeFill } from "react-icons/ri";
 import call from '../../../public/assets/call.png'
 import text from '../../../public/assets/text.png'
-import twitter from '../../../public/assets/twitter.png'
+import video from '../../../public/assets/video.png'
+  import { toast } from 'react-toastify';
 
 
 const Promise = fetch("/Friends.json").then((res) => res.json());
@@ -14,12 +15,31 @@ export const ProfileDetails = () => {
      const {id} = useParams();
        const singleProfile =  ProfileData.find(item => item.id == id)
        const date = new Date(singleProfile.next_due_date)
-
+       
 const formattedDate = date.toLocaleDateString("en-US", {
   month: "short",
   day: "numeric",
   year: "numeric"
 })
+
+
+
+const   handleAction = (type) => {
+  const newEntry = {
+    id: Date.now() ,
+    type : type,
+    name : singleProfile.name ,
+     date: new Date().toISOString()
+
+  };
+  const existing = JSON.parse(localStorage.getItem("timeline") || "[]" );
+  existing.unshift(newEntry);
+  localStorage.setItem("timeline" , JSON.stringify(existing))
+  toast.success(`${type} with ${singleProfile.name}`)
+}
+
+
+
   return (
    <>
   <div className='flex flex-col lg:flex-row gap-5 container mx-auto py-10 lg:py-20 px-4 justify-center items-center lg:items-start'>
@@ -78,23 +98,27 @@ const formattedDate = date.toLocaleDateString("en-US", {
       <div className='shadow-2xl p-4 bg-white mt-2.5 space-y-2'>
         <h1 className='font-semibold text-[22px] sm:text-[30px] text-[#244D3F]'>Quick Check-In</h1>
         <div className='grid grid-cols-3 gap-3 sm:gap-5 text-center items-center'>
-          <div className='shadow-lg px-4 py-5 bg-[#E9E9E9]'>
+          <div onClick={() => handleAction("Call")}
+           className='shadow-lg px-4 py-5 bg-[#E9E9E9]'>
             <img className='mx-auto' src={call}></img>
-            <p className='text-[#64748B] text-[16px] sm:text-[18px]'>Call</p>
+            <button className='text-[#64748B] text-[16px] sm:text-[18px]'>Call</button>
           </div>
-          <div className='shadow-lg py-5 bg-[#E9E9E9]'>
+          <div  onClick={() => handleAction("Text")}
+          className='shadow-lg py-5 bg-[#E9E9E9]'>
             <img className='mx-auto' src={text}></img>
-            <p className='text-[#64748B] text-[16px] sm:text-[18px]'>Call</p>
+            <button className='text-[#64748B] text-[16px] sm:text-[18px]'>Text</button>
           </div>
-          <div className='shadow-lg px-4 py-5 bg-[#E9E9E9]'>
-            <img className='mx-auto' src={twitter}></img>
-            <p className='text-[#64748B] text-[16px] sm:text-[18px]'>Call</p>
+          <div onClick={() => handleAction("Video")} 
+          className='shadow-lg px-4 py-5 bg-[#E9E9E9]'>
+            <img className='mx-auto' src={video}></img>
+            <button className='text-[#64748B] text-[16px] sm:text-[18px]'>video</button>
           </div>
         </div>
       </div>
     </section>
-
+    
   </div>
+  
 </>
    
   )

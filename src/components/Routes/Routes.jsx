@@ -4,6 +4,7 @@ import { MainLayout } from '../MainLayout/MainLayout'
 import { NavHome } from '../NavHome/NavHome'
 import { AllProfile } from '../AllProfile/AllProfile'
 import { ProfileDetails } from '../ProfileDetails/ProfileDetails'
+import { Timeline } from '../Timeline/Timeline'
 
 export const router = createBrowserRouter ([
      {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter ([
     {
     path:'/profile/:id',
     element:<ProfileDetails/> ,
+    },
+    {
+    path:'/timeline',
+    element:<Timeline/> ,
     }
      ]
     }
