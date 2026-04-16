@@ -15,18 +15,32 @@ export const Timeline = () => {
   Text: text,
   Video: video
   }
+
+  const [filter , setFilter ] = useState('All');
+  const filtered = filter === "All" ? entries :
+        entries.filter(entry => entry.type === filter)
+
   return (
     <>
+    
     <div>
        <div className='container mx-auto  py-10 px-4'>
       
       <h1 className='text-[32px] font-bold text-[#244D3F] mb-6'>Timeline</h1>
-
-      {entries.length === 0 ? (
+      <select 
+  value={filter}
+  onChange={(e) => setFilter(e.target.value)}
+  className='border px-5 font-semibold py-2 rounded  w-fit'>
+  <option value="All">All timeline</option>
+  <option value="Call">Call</option>
+  <option value="Text">Text</option>
+  <option value="Video">Video</option>
+  </select>
+      {filtered .length === 0 ? (
         <p className='text-gray-500'>No interactions yet.</p>
-      ) : (
+      ) : ( 
         
-        entries.map((entry) => (
+        filtered.map((entry) => (
           <div key={entry.id} className='flex items-center gap-4 mt-6 py-4 border-b  bg-white shadow'>
             
             <img src={icons[entry.type]} className='w-8 h-8 ml-5' />
