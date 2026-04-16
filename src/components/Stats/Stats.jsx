@@ -21,15 +21,16 @@ export const Stats = () => {
   const COLORS = ['#244D3F', '#7C3AED', '#22C55E']
 
   return (
-    <><h1 className='font-bold text-[#1F2937] text-[38px]  ml-52 mb-2'>
+    <><h1 className='font-bold text-[#1F2937] text-[38px]  ml-50 mb-3'>
         Friendship Analytics
       </h1>
-       <div className='container mx-auto place-items-center w-[1000px] h-[600px]  mb-8 shadow'>
+       <div className='container mx-auto  w-[1300px] h-[600px]  mb-8 shadow'>
         <div className=' py-10 px-4 flex flex-col items-start'>
       
-      <p className='text-[#244D3F] font-semibold w-full'>By Interaction Type</p>
+      <p className='text-[#244D3F] text-[20px] font-semibold w-full'>By Interaction Type</p>
 
-      <PieChart width={400} height={450}>
+      <div className='container mx-auto place-items-center'>
+        <PieChart  width={400} height={450}>
         <Pie
           data={data}
           innerRadius="80%"
@@ -45,6 +46,7 @@ export const Stats = () => {
         </Pie>
          <Legend/>
       </PieChart>
+      </div>
 
     </div>
        </div>
