@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "name": "Nusrat Jahan",
+    "name": "Imran Hossain",
     "picture": "https://i.ibb.co.com/hJpFZRHZ/Ellipse-1-6.png",
     "email": "nusrat.jahan@gmail.com",
     "days_since_contact": 12,
@@ -85,7 +85,7 @@
   },
   {
     "id": 8,
-    "name": "Imran Hossain",
+    "name": "Nusrat Jahan",
     "picture": "https://i.ibb.co.com/zWVFnHH0/Ellipse-1.png",
     "email": "imran.hossain@gmail.com",
     "days_since_contact": 7,

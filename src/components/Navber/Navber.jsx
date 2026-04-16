@@ -28,9 +28,10 @@ export const Navber = () => {
       </button>
       </Link>
 
-      <button className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
+      <Link   to="stats"
+      className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
         <FaChartLine /> Stats
-      </button>
+      </Link>
 
     </div>
   </div>

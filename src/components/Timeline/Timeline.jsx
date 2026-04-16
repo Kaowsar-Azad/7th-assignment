@@ -41,7 +41,7 @@ export const Timeline = () => {
       ) : ( 
         
         filtered.map((entry) => (
-          <div key={entry.id} className='flex items-center gap-4 mt-6 py-4 border-b  bg-white shadow'>
+          <div key={entry.id} className='flex items-center gap-4 mt-6 py-4   bg-white shadow'>
             
             <img src={icons[entry.type]} className='w-8 h-8 ml-5' />
 

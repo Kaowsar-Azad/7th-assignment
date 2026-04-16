@@ -5,6 +5,7 @@ import { NavHome } from '../NavHome/NavHome'
 import { AllProfile } from '../AllProfile/AllProfile'
 import { ProfileDetails } from '../ProfileDetails/ProfileDetails'
 import { Timeline } from '../Timeline/Timeline'
+import { Stats } from '../Stats/Stats'
 
 export const router = createBrowserRouter ([
      {
@@ -29,6 +30,11 @@ export const router = createBrowserRouter ([
     {
     path:'/timeline',
     element:<Timeline/> ,
+    }
+    ,
+    {
+    path:'/stats',
+    element:<Stats/> ,
     }
      ]
     }
