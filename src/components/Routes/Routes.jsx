@@ -6,6 +6,7 @@ import { AllProfile } from '../AllProfile/AllProfile'
 import { ProfileDetails } from '../ProfileDetails/ProfileDetails'
 import { Timeline } from '../Timeline/Timeline'
 import { Stats } from '../Stats/Stats'
+import { ErrorPage } from '../ErrorPage/ErrorPage'
 
 export const router = createBrowserRouter ([
      {
@@ -35,7 +36,11 @@ export const router = createBrowserRouter ([
     {
     path:'/stats',
     element:<Stats/> ,
-    }
+    },
+    {
+    path: '*',
+    element: <ErrorPage/>
+   }
      ]
     }
    

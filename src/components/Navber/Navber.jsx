@@ -3,7 +3,7 @@ import navimg  from '../../../public/assets/logo.png'
 import { IoHome } from "react-icons/io5";
 import { IoMdTime } from "react-icons/io";
 import { FaChartLine } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 export const Navber = () => {
@@ -16,22 +16,32 @@ export const Navber = () => {
 
     <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center sm:justify-end'>
       
-      <Link to="/">
-      <button className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
-        <IoHome /> Home
+      <NavLink to="/">{({isActive}) => (
+        <button className={`flex  items-center justify-center gap-1  p-2.5 w-full sm:w-auto
+          ${isActive ?  'bg-[#244D3F] text-white rounded px-4' : "text-[#64748B]"}`
+        }>
+          <IoHome /> Home
       </button>
-
-      </Link>
-      <Link to="timeline">
-      <button className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
-        <IoMdTime /> Timeline
+      )}
+      </NavLink>
+       
+       <NavLink to="timeline">{({isActive}) => (
+        <button className={`flex  items-center justify-center gap-1  p-2.5 w-full sm:w-auto
+          ${isActive ?  'bg-[#244D3F] text-white rounded px-4 ' : "text-[#64748B]"}`
+        }>
+          <IoMdTime /> Timeline
       </button>
-      </Link>
-
-      <Link   to="stats"
-      className='flex text-white items-center justify-center gap-1 bg-[#244D3F] p-2.5 w-full sm:w-auto'>
-        <FaChartLine /> Stats
-      </Link>
+      )}
+      </NavLink>
+    
+      <NavLink to="stats">{({isActive}) => (
+        <button className={`flex items-center justify-center gap-1  p-2.5 w-full sm:w-auto
+          ${isActive ? 'bg-[#244D3F] text-white rounded px-4' : "text-[#64748B]"}`
+        }>
+           <FaChartLine /> Stats
+      </button>
+      )}
+      </NavLink>
 
     </div>
   </div>
