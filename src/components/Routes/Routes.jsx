@@ -20,7 +20,7 @@ export const router = createBrowserRouter ([
     },
     {
     path:'/profiles',
-    element:(<Suspense fallback={<span className="loading loading-spinner text-error"></span>}>
+    element:(<Suspense fallback={<h1>loading....</h1>}>
      <AllProfile/>
     </Suspense>)
     },

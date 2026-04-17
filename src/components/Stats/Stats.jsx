@@ -26,7 +26,7 @@ export const Stats = () => {
   Friendship Analytics
 </h1>
 
-<div className='container mx-auto w-full max-w-[1300px] h-auto lg:h-[600px] mb-8 shadow px-2'>
+<div className='container mx-auto w-full max-w-[1300px] h-auto lg:h-[460px] mb-8 shadow px-2'>
   <div className='py-6 sm:py-8 lg:py-10 px-2 sm:px-4 flex flex-col items-start'>
 
     <p className='text-[#244D3F] text-lg sm:text-xl font-semibold w-full text-center lg:text-left'>
